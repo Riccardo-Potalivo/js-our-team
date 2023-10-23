@@ -47,10 +47,10 @@ function myScript()
         console.log("Picture: " + ourTeam[i].picture);
         console.groupEnd();
 
-        card(ourTeam[i])
+        printCard(ourTeam[i])
     }
 
-    function card(ourTeam)
+    function printCard(ourTeam)
     {
         // creo il contenitore della card
         const col = document.createElement('div');
@@ -70,5 +70,20 @@ function myScript()
         col.innerHTML = cardLayout;
     }
 
+    const btn = document.getElementById('add_collaborator');
+    btn.addEventListener('click', () =>
+    {
+        const addCollaborator =
+        {
+            
+            name: document.getElementById('recipient-name').value,
+            role: document.getElementById('recipient-role').value,
+            picture: 'barbara-ramos-graphic-designer.jpg'
+        }
+
+        ourTeam.push(addCollaborator);
+        printCard(addCollaborator);
+    });
+    
 }
 
