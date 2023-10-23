@@ -38,5 +38,14 @@ function myScript()
         }
     ]
 
+    for (let i = 0; i < ourTeam.length; i++)
+    {
+        console.group();
+        console.log("Name: " + ourTeam[i].name);
+        console.log("Role: " + ourTeam[i].Role);
+        console.log("Picture: " + ourTeam[i].picture);
+        console.groupEnd();
+    }
+
 }
 
