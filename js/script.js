@@ -3,6 +3,7 @@
 myScript();
 function myScript()
 {
+    const row = document.querySelector('.row');
     // array dati team
     const ourTeam =
     [
@@ -45,6 +46,28 @@ function myScript()
         console.log("Role: " + ourTeam[i].Role);
         console.log("Picture: " + ourTeam[i].picture);
         console.groupEnd();
+
+        card()
+    }
+
+    function card()
+    {
+        // creo il contenitore della card
+        const col = document.createElement('div');
+        row.append(col)
+        col.classList.add('col-4', 'pt-4')
+        // contenuto della card
+        const cardLayout =
+        `
+        <div class="card text-center">
+            <img src="img/angela-caroll-chief-editor.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title">Name</h6>
+                <p class="card-text">Role</p>
+            </div>
+        </div>
+        `
+        col.innerHTML = cardLayout;
     }
 
 }
